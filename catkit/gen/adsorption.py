@@ -57,6 +57,22 @@ class AdsorptionSites():
 
         self.coordinates = np.array(self.coordinates)
         self.connectivity = np.array(self.connectivity, dtype=int)
+        # Debugging print statements for self.r1_topology
+        print("Type of self.r1_topology before conversion:", type(self.r1_topology))
+        if isinstance(self.r1_topology, list):
+            print("Length of self.r1_topology:", len(self.r1_topology))
+            print("First few elements of self.r1_topology:", self.r1_topology[:5])
+        
+        self.r1_topology = np.array(self.r1_topology)
+
+        # Debugging print statements for self.r2_topology
+        print("Type of self.r2_topology before conversion:", type(self.r2_topology))
+        if isinstance(self.r2_topology, list):
+            print("Length of self.r2_topology:", len(self.r2_topology))
+            print("First few elements of self.r2_topology:", self.r2_topology[:5])
+
+        self.r2_topology = np.array(self.r2_topology)
+        
         self.r1_topology = np.array(self.r1_topology)
         self.r2_topology = np.array(self.r2_topology)
         self.frac_coords = np.dot(self.coordinates, np.linalg.pinv(slab.cell))
